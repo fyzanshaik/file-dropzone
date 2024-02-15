@@ -48,5 +48,5 @@ app.post("/upload", requestMiddleware, upload.array("files[]"), (req, res) => {
 app.use(express.static("static"));
 
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`Server is running at http://localhost:${PORT} Crtl+click here`);
 });
