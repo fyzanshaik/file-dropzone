@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload</title>
+  <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+  <div class="container">
+    <h1>Upload Files</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <label for="fileInput" id="fileInputLabel">Choose Files</label>
+      <input type="file" id="fileInput" name="files[]" multiple>
+      <button type="submit">Upload</button>
+    </form>
+    <div>
+      <p id="fileSize1">Total File Size:</p>
+      <p id="fileSize"></p>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
