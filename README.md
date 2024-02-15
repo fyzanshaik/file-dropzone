@@ -9,6 +9,46 @@ Welcome to File-Dropzone, a straightforward and efficient file upload web applic
 - **🔒 Secure**: Ensure the security of your files with a server-side storage approach.
 - **🌐 Cross-Platform**: Access the upload functionality from any device with a web browser.
 
+## Installing Node.js
+Windows:
+1. Open a web browser and go to the official Node.js website: Node.js Downloads.
+2. Download the Windows Installer (.msi) package corresponding to your system 
+   architecture (32-bit or 64-bit).
+3. Once the download is complete, double-click on the downloaded file to start the 
+   installation process.
+4. Follow the on-screen instructions in the installation wizard. You can leave the       
+    default options selected in most cases.
+5. After the installation is complete, open Command Prompt (CMD) or PowerShell and type 
+   the following command to verify that Node.js and npm (Node Package Manager) are 
+   installed:
+```
+node -v
+npm -v
+```
+If Node.js and npm are installed correctly, you will see their respective versions printed in the terminal.
+
+Linux (Ubuntu/Debian):
+1. Open a terminal window.
+2. Update the package index and install the required dependencies by running the following commands:
+```
+sudo apt update
+sudo apt install curl
+```
+3. Use curl to download the Node.js installation script:
+```
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+```
+4. Install Node.js and npm by running:
+```
+sudo apt install -y nodejs
+```
+5. After the installation is complete, verify that Node.js and npm are installed by typing the following commands in the terminal:
+```
+node -v
+npm -v
+```
+If Node.js and npm are installed correctly, you will see their respective versions printed in the terminal.
+
 ## Getting Started
 
 To get started with File-Dropzone, follow these steps:
