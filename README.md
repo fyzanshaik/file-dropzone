@@ -1,6 +1,6 @@
 # 🚀 File-Dropzone: Simple File Upload Web Application
 
-Welcome to File-Dropzone, a straightforward and efficient file upload web application built with Node.js and Express! This application allows you to upload files effortlessly and manage them on your server. Whether you're a developer, student, or professional, you'll find File-Dropzone to be a handy tool for managing your files. 📁
+Welcome to File-Dropzone, a straightforward and efficient file upload web application built with Bun and Express! This application allows you to upload files effortlessly and manage them on your server. Whether you're a developer, student, or professional, you'll find File-Dropzone to be a handy tool for managing your files. 📁
 
 ## Features
 
@@ -9,45 +9,42 @@ Welcome to File-Dropzone, a straightforward and efficient file upload web applic
 - **🔒 Secure**: Ensure the security of your files with a server-side storage approach.
 - **🌐 Cross-Platform**: Access the upload functionality from any device with a web browser.
 
-## Installing Node.js
-Windows:
-1. Open a web browser and go to the official Node.js website: Node.js Downloads.
-2. Download the Windows Installer (.msi) package corresponding to your system 
-   architecture (32-bit or 64-bit).
-3. Once the download is complete, double-click on the downloaded file to start the 
-   installation process.
-4. Follow the on-screen instructions in the installation wizard. You can leave the       
-    default options selected in most cases.
-5. After the installation is complete, open Command Prompt (CMD) or PowerShell and type 
-   the following command to verify that Node.js and npm (Node Package Manager) are 
-   installed:
-```
-node -v
-npm -v
-```
-If Node.js and npm are installed correctly, you will see their respective versions printed in the terminal.
+## Installing Bun
 
-Linux (Ubuntu/Debian):
-1. Open a terminal window.
-2. Update the package index and install the required dependencies by running the following commands:
-```
-sudo apt update
-sudo apt install curl
-```
-3. Use curl to download the Node.js installation script:
-```
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-```
-4. Install Node.js and npm by running:
-```
-sudo apt install -y nodejs
-```
-5. After the installation is complete, verify that Node.js and npm are installed by typing the following commands in the terminal:
-```
-node -v
-npm -v
-```
-If Node.js and npm are installed correctly, you will see their respective versions printed in the terminal.
+### Windows:
+
+1. **Install WSL (Windows Subsystem for Linux)**:
+   If you don't have WSL installed, follow the instructions [here](https://docs.microsoft.com/en-us/windows/wsl/install).
+
+2. **Install Bun**:
+   Open your WSL terminal and run the following command to install Bun:
+   ```bash
+   curl -fsSL https://bun.sh/install | bash
+   ```
+
+3. **Verify Installation**:
+   After the installation is complete, type the following command to verify that Bun is installed:
+   ```bash
+   bun --version
+   ```
+   You should see the Bun version printed in the terminal.
+
+### Linux (Ubuntu/Debian):
+
+1. **Open a terminal window**.
+
+2. **Install Bun**:
+   Run the following command to install Bun:
+   ```bash
+   curl -fsSL https://bun.sh/install | bash
+   ```
+
+3. **Verify Installation**:
+   After the installation is complete, verify that Bun is installed by typing the following command in the terminal:
+   ```bash
+   bun --version
+   ```
+   You should see the Bun version printed in the terminal.
 
 ## Getting Started
 
@@ -55,7 +52,7 @@ To get started with File-Dropzone, follow these steps:
 
 ### Prerequisites
 
-Ensure that you have Node.js and npm installed on your machine. You can download Node.js from [here](https://nodejs.org/).
+Ensure that you have Bun installed on your machine. You can download Bun from [here](https://bun.sh/).
 
 ### Installation
 
@@ -71,7 +68,7 @@ Ensure that you have Node.js and npm installed on your machine. You can download
 
 3. **Install dependencies:**
    ```bash
-   npm install
+   bun install
    ```
 
 4. **Set up environment variables:**
@@ -89,7 +86,7 @@ Ensure that you have Node.js and npm installed on your machine. You can download
 
 5. **Start the server:**
    ```bash
-   npm start
+   bun run start
    ```
 
 6. **Access the application:**
@@ -127,5 +124,3 @@ To access File-Dropzone from any device on the same network:
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 Feel free to explore the features of File-Dropzone and customize it according to your needs. Happy file uploading! 🚀
-
----
