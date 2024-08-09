@@ -53,31 +53,48 @@ If Node.js and npm are installed correctly, you will see their respective versio
 
 To get started with File-Dropzone, follow these steps:
 
-1. Clone the repository:
-```
-git clone https://github.com/your-username/file-dropzone.git
-```
-2. Navigate to the project directory:
-```
-cd file-dropzone
-```
-3. Install dependencies:
-```
-npm install
-```
-4. Create a `.env` file in the root directory or use the existing file present in your project. Add the following variables:
-```
-PORT=3000
-UPLOAD_DIRECTORY=/path/to/your/upload/directory
-```
-Replace `/path/to/your/upload/directory` with the directory path where you want to store uploaded files.
-Eg : UPLOAD_DIRECTORY="/home/fyzanshaik/Documents/MyUploads" (Make sure it's inside double quotes)
+### Prerequisites
 
-6. Start the server:
-```
-npm start
-```
-6. Open your web browser and go to http://localhost:3000 to access the application.
+Ensure that you have Node.js and npm installed on your machine. You can download Node.js from [here](https://nodejs.org/).
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/file-dropzone.git
+   ```
+
+2. **Navigate to the project directory:**
+   ```bash
+   cd file-dropzone
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+4. **Set up environment variables:**
+
+   Create a `.env` file in the root directory, or use the existing file present in your project. Add the following variables:
+   ```bash
+   PORT=3000
+   UPLOAD_DIRECTORY="/path/to/your/upload/directory"
+   ```
+   Replace `/path/to/your/upload/directory` with the directory path where you want to store uploaded files. For example:
+   ```bash
+   UPLOAD_DIRECTORY="/home/fyzanshaik/Documents/MyUploads"
+   ```
+   Ensure the path is enclosed in double quotes.
+
+5. **Start the server:**
+   ```bash
+   npm start
+   ```
+
+6. **Access the application:**
+
+   Open your web browser and go to [http://localhost:3000](http://localhost:3000) to access the application.
 
 ## Usage
 
@@ -99,11 +116,16 @@ To access File-Dropzone from any device on the same network:
 1. Ensure that your device is connected to the same network as the server running File-Dropzone.
 2. Find your IP address by running `ifconfig` on Linux or `ipconfig` on Windows.
 3. Note down the IP address associated with your Wi-Fi connection.
-4. In your web browser, navigate to `https://your-ip-address:3000/` (replace `your-ip-address` with the IP address you noted earlier).
-   eg : https://192.168.0.1:3000/
-6. You should now be able to access File-Dropzone from any device on the same network.
+4. In your web browser, navigate to `http://your-ip-address:3000/` (replace `your-ip-address` with the IP address you noted earlier).
+   ```bash
+   e.g., http://192.168.0.1:3000/
+   ```
+5. You should now be able to access File-Dropzone from any device on the same network.
+
 ## License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 Feel free to explore the features of File-Dropzone and customize it according to your needs. Happy file uploading! 🚀
+
+---
