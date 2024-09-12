@@ -6,19 +6,17 @@ import dotenv from 'dotenv';
 import { v4 as uuidv4 } from 'uuid';
 import { networkInterfaces } from 'os';
 
-// Import the requestMiddleware (assuming it's also converted to TypeScript)
 import requestMiddleware from './requestMiddleware';
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const UPLOAD_DIRECTORY = process.env.UPLOAD_DIRECTORY || 'uploads';
-const MAX_FILE_SIZE = process.env.MAX_FILE_SIZE || 1024 * 1024 * 50; // 50MB default
+const PORT = process.env.PORT ?? 3000;
+const UPLOAD_DIRECTORY = process.env.UPLOAD_DIRECTORY ?? 'uploads';
+const MAX_FILE_SIZE = process.env.MAX_FILE_SIZE ?? 1024 * 1024 * 50;
 
 const indexPath = path.join(__dirname, 'static', 'index.html');
 
-// Ensure upload directory exists
 try {
 	fs.mkdirSync(UPLOAD_DIRECTORY, { recursive: true });
 	console.log(`Using upload directory: ${UPLOAD_DIRECTORY}`);
@@ -27,7 +25,6 @@ try {
 	process.exit(1);
 }
 
-// Configure multer storage
 const storage: StorageEngine = multer.diskStorage({
 	destination: (req: Request, file: Express.Multer.File, cb: (error: Error | null, destination: string) => void) => {
 		console.log('Destination called for file:', file.originalname);
@@ -50,7 +47,6 @@ const upload = multer({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files
 app.use(express.static('static'));
 
 app.get('/', requestMiddleware, (req: Request, res: Response) => {
@@ -58,7 +54,6 @@ app.get('/', requestMiddleware, (req: Request, res: Response) => {
 });
 
 app.post('/upload', requestMiddleware, (req: Request, res: Response) => {
-	// Ensure the uploads directory exists before processing the request
 	if (!fs.existsSync(uploadDir)) {
 		fs.mkdirSync(uploadDir, { recursive: true });
 	}
@@ -86,7 +81,6 @@ app.post('/upload', requestMiddleware, (req: Request, res: Response) => {
 	});
 });
 
-// Get list of uploaded files
 app.get('/files', requestMiddleware, (req: Request, res: Response) => {
 	fs.readdir(UPLOAD_DIRECTORY, (err, files) => {
 		if (err) {
@@ -96,7 +90,6 @@ app.get('/files', requestMiddleware, (req: Request, res: Response) => {
 	});
 });
 
-// Delete a file
 app.delete('/files/:filename', requestMiddleware, (req: Request, res: Response) => {
 	const filename = req.params.filename;
 	const filepath = path.join(UPLOAD_DIRECTORY, filename);
@@ -109,7 +102,6 @@ app.delete('/files/:filename', requestMiddleware, (req: Request, res: Response) 
 	});
 });
 
-// Get server IP addresses
 function getServerAddresses(): string[] {
 	const interfaces = networkInterfaces();
 	const addresses: string[] = [];
@@ -125,7 +117,6 @@ function getServerAddresses(): string[] {
 	return addresses;
 }
 
-// Start the server
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`);
 	console.log('Server is accessible at:');

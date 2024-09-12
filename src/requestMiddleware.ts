@@ -1,4 +1,3 @@
-// requestMiddleware.ts
 import { Request, Response, NextFunction } from 'express';
 
 const requestMiddleware = (req: Request, res: Response, next: NextFunction): void => {
