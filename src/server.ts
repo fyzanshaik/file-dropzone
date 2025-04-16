@@ -33,7 +33,7 @@ const storage: StorageEngine = multer.diskStorage({
 	filename: (req: Request, file: Express.Multer.File, cb: (error: Error | null, filename: string) => void) => {
 		console.log('Filename called for file:', file.originalname);
 		const uniquePrefix = uuidv4();
-		cb(null, `${uniquePrefix}-${file.originalname}`);
+		cb(null, file.originalname);
 	},
 });
 const uploadDir = path.join(__dirname, 'uploads');

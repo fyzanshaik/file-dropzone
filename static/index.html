@@ -5,26 +5,82 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>File Upload</title>
 		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 	</head>
 	<body>
-		<div class="container">
-			<h1>Upload Files</h1>
-			<form id="uploadForm">
-				<label for="fileInput" class="custom-file-upload">
-					<span>Choose Files</span>
-					<input id="fileInput" type="file" multiple />
-				</label>
-				<div id="selectedFiles"></div>
-				<button type="submit">Upload</button>
-			</form>
-			<div id="fileSizeContainer">
-				<p>Total File Size: <span id="fileSize">0 MB</span></p>
+		<div class="layout">
+			<div class="background">
+				<div class="gradient-blob one"></div>
+				<div class="gradient-blob two"></div>
+				<div class="grid-overlay"></div>
 			</div>
-			<div class="progress-bar">
-				<div class="progress"></div>
+
+			<div class="card">
+				<div class="card-header">
+					<h1>Upload Files</h1>
+					<p class="muted">Select files to upload to your storage</p>
+				</div>
+
+				<div class="card-content">
+					<form id="uploadForm">
+						<div class="dropzone" id="dropzone">
+							<div class="dropzone-content">
+								<div class="icon">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12 17V3M12 3L7 8M12 3L17 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M20 21H4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<h3>Drag files to upload</h3>
+								<p>or</p>
+								<label class="button secondary" for="fileInput">
+									Choose Files
+									<input id="fileInput" type="file" multiple />
+								</label>
+							</div>
+						</div>
+
+						<div class="selected-files-container">
+							<div id="selectedFiles" class="selected-files"></div>
+
+							<div class="file-info">
+								<div class="total-size">
+									<span>Total size:</span>
+									<span id="fileSize" class="size-value">0 MB</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="progress-container">
+							<div class="progress-bar">
+								<div class="progress"></div>
+							</div>
+						</div>
+
+						<button type="submit" class="button primary">Upload</button>
+					</form>
+				</div>
 			</div>
 		</div>
-		<div class="animated-background"></div>
+
+		<div class="toast" id="toast">
+			<div class="toast-content">
+				<svg class="toast-icon success" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M10 18.3333C14.6024 18.3333 18.3334 14.6024 18.3334 10C18.3334 5.39763 14.6024 1.66667 10 1.66667C5.39765 1.66667 1.66669 5.39763 1.66669 10C1.66669 14.6024 5.39765 18.3333 10 18.3333Z"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
+					<path d="M6.66669 10L9.16669 12.5L13.3334 8.33334" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+				<div class="toast-message">Files uploaded successfully!</div>
+			</div>
+		</div>
+
 		<script src="script.js"></script>
 	</body>
 </html>
